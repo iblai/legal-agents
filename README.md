@@ -9,7 +9,7 @@ Drop-in [OpenClaw](https://github.com/iblai/iblai-claw-setup) / [NemoClaw](https
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-292929?logoColor=white)](https://github.com/iblai/iblai-claw-setup)
 [![NemoClaw](https://img.shields.io/badge/NemoClaw-76B900?logo=nvidia&logoColor=white)](https://github.com/NVIDIA/NemoClaw)
 [![ibl.ai Platform](https://img.shields.io/badge/ibl.ai_Platform-4A90D9?logoColor=white)](https://ibl.ai)
-[![License: Proprietary](https://img.shields.io/badge/License-Proprietary-blue.svg)](#license)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 </div>
 
@@ -197,4 +197,4 @@ All skills draw credentials from `~/.openclaw/.env` on the daemon host. The comm
 
 ## License
 
-Proprietary — ibl.ai
+Released under the [MIT License](LICENSE).
