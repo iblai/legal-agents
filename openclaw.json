@@ -1,0 +1,163 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "/sandbox/.openclaw/workspace",
+      "model": { "primary": "anthropic/claude-sonnet-4-5-20250929" },
+      "subagents": { "maxConcurrent": 8, "maxChildrenPerAgent": 20, "runTimeoutSeconds": 900, "archiveAfterMinutes": 60 },
+      "skills": [
+        "clio",
+        "westlaw",
+        "relativity",
+        "netdocuments",
+        "imanage",
+        "docusign",
+        "intapp-conflicts",
+        "ironclad",
+        "pacer",
+        "docket-alarm",
+        "servicenow"
+      ],
+      "sandbox": { "mode": "all", "backend": "openshell", "scope": "agent", "workspaceAccess": "rw" }
+    },
+    "list": [
+      {
+        "id": "legal-assistant",
+        "default": true,
+        "name": "Firm Assistant",
+        "workspace": "/sandbox/.openclaw/workspace",
+        "agentDir": "/sandbox/.openclaw/agents/legal-assistant/agent",
+        "model": "anthropic/claude-sonnet-4-5-20250929",
+        "identity": { "name": "Firm Assistant", "emoji": "⚖️" },
+        "tools": { "profile": "full" },
+        "subagents": {
+          "allowAgents": [
+            "case-research-agent",
+            "contract-review-agent",
+            "client-intake-agent",
+            "billing-time-agent",
+            "discovery-agent",
+            "compliance-agent",
+            "knowledge-agent",
+            "brief-drafting-agent",
+            "conflicts-check-agent",
+            "training-agent",
+            "docket-management-agent",
+            "it-help-desk-agent"
+          ],
+          "delegationMode": "prefer",
+          "maxSpawnDepth": 2
+        }
+      },
+      {
+        "id": "case-research-agent",
+        "name": "Case Research",
+        "workspace": "/sandbox/.openclaw/workspace",
+        "agentDir": "/sandbox/.openclaw/agents/case-research-agent/agent",
+        "model": "anthropic/claude-sonnet-4-5-20250929",
+        "identity": { "name": "Case Research", "emoji": "📚" },
+        "tools": { "profile": "full" }
+      },
+      {
+        "id": "contract-review-agent",
+        "name": "Contract Review",
+        "workspace": "/sandbox/.openclaw/workspace",
+        "agentDir": "/sandbox/.openclaw/agents/contract-review-agent/agent",
+        "model": "anthropic/claude-sonnet-4-5-20250929",
+        "identity": { "name": "Contract Review", "emoji": "📝" },
+        "tools": { "profile": "full" }
+      },
+      {
+        "id": "client-intake-agent",
+        "name": "Client Intake",
+        "workspace": "/sandbox/.openclaw/workspace",
+        "agentDir": "/sandbox/.openclaw/agents/client-intake-agent/agent",
+        "model": "anthropic/claude-sonnet-4-5-20250929",
+        "identity": { "name": "Client Intake", "emoji": "🤝" },
+        "tools": { "profile": "full" }
+      },
+      {
+        "id": "billing-time-agent",
+        "name": "Billing & Time",
+        "workspace": "/sandbox/.openclaw/workspace",
+        "agentDir": "/sandbox/.openclaw/agents/billing-time-agent/agent",
+        "model": "anthropic/claude-sonnet-4-5-20250929",
+        "identity": { "name": "Billing & Time", "emoji": "🕐" },
+        "tools": { "profile": "full" }
+      },
+      {
+        "id": "discovery-agent",
+        "name": "Discovery",
+        "workspace": "/sandbox/.openclaw/workspace",
+        "agentDir": "/sandbox/.openclaw/agents/discovery-agent/agent",
+        "model": "anthropic/claude-sonnet-4-5-20250929",
+        "identity": { "name": "Discovery", "emoji": "🔍" },
+        "tools": { "profile": "full" }
+      },
+      {
+        "id": "compliance-agent",
+        "name": "Compliance",
+        "workspace": "/sandbox/.openclaw/workspace",
+        "agentDir": "/sandbox/.openclaw/agents/compliance-agent/agent",
+        "model": "anthropic/claude-sonnet-4-5-20250929",
+        "identity": { "name": "Compliance", "emoji": "🛡️" },
+        "tools": { "profile": "full" },
+        "heartbeat": { "every": "6h" }
+      },
+      {
+        "id": "knowledge-agent",
+        "name": "Knowledge Base",
+        "workspace": "/sandbox/.openclaw/workspace",
+        "agentDir": "/sandbox/.openclaw/agents/knowledge-agent/agent",
+        "model": "anthropic/claude-sonnet-4-5-20250929",
+        "identity": { "name": "Knowledge Base", "emoji": "🗂️" },
+        "tools": { "profile": "full" }
+      },
+      {
+        "id": "brief-drafting-agent",
+        "name": "Brief Drafting",
+        "workspace": "/sandbox/.openclaw/workspace",
+        "agentDir": "/sandbox/.openclaw/agents/brief-drafting-agent/agent",
+        "model": "anthropic/claude-sonnet-4-5-20250929",
+        "identity": { "name": "Brief Drafting", "emoji": "✍️" },
+        "tools": { "profile": "full" }
+      },
+      {
+        "id": "conflicts-check-agent",
+        "name": "Conflicts Check",
+        "workspace": "/sandbox/.openclaw/workspace",
+        "agentDir": "/sandbox/.openclaw/agents/conflicts-check-agent/agent",
+        "model": "anthropic/claude-sonnet-4-5-20250929",
+        "identity": { "name": "Conflicts Check", "emoji": "🔎" },
+        "tools": { "profile": "full" }
+      },
+      {
+        "id": "training-agent",
+        "name": "Training & CLE",
+        "workspace": "/sandbox/.openclaw/workspace",
+        "agentDir": "/sandbox/.openclaw/agents/training-agent/agent",
+        "model": "anthropic/claude-sonnet-4-5-20250929",
+        "identity": { "name": "Training & CLE", "emoji": "🎓" },
+        "tools": { "profile": "full" }
+      },
+      {
+        "id": "docket-management-agent",
+        "name": "Docket Management",
+        "workspace": "/sandbox/.openclaw/workspace",
+        "agentDir": "/sandbox/.openclaw/agents/docket-management-agent/agent",
+        "model": "anthropic/claude-sonnet-4-5-20250929",
+        "identity": { "name": "Docket Management", "emoji": "📅" },
+        "tools": { "profile": "full" },
+        "heartbeat": { "every": "1h" }
+      },
+      {
+        "id": "it-help-desk-agent",
+        "name": "IT Help Desk",
+        "workspace": "/sandbox/.openclaw/workspace",
+        "agentDir": "/sandbox/.openclaw/agents/it-help-desk-agent/agent",
+        "model": "anthropic/claude-sonnet-4-5-20250929",
+        "identity": { "name": "IT Help Desk", "emoji": "💻" },
+        "tools": { "profile": "full" }
+      }
+    ]
+  }
+}

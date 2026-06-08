@@ -1,0 +1,9 @@
+{
+  "_comment": "SAMPLE CREDENTIALS ONLY - every value below is a non-functional placeholder. Replace before deploying.",
+  "profiles": {
+    "anthropic": {
+      "provider": "anthropic",
+      "apiKey": "sk-ant-api03-SAMPLE-PLACEHOLDER-NOT-A-REAL-KEY-0000000000000000000000000000000000000000"
+    }
+  }
+}
